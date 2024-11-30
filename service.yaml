@@ -7,8 +7,8 @@ metadata:
 spec:
   type: NodePort  
   ports:
-    - port: 8081  
-      targetPort: 8081  
+    - port: 8200 
+      targetPort: 8200 
       protocol: TCP
   selector:
     app: mymavenapp
