@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymavenapp
+  labels:
+    app: mymavenapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mymavenapp
+  template:
+    metadata:
+      labels:
+        app: mymavenapp
+    spec:
+      containers:
+      - name: mymavenapp
+        image: hiteshdocker31/mymavenapp:v1  
+        ports:
+        - containerPort: 8080  
+        env:
+        - name: JAVA_OPTS
+          value: "-Xms512m -Xmx1024m"  
